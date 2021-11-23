@@ -59,10 +59,11 @@ export class CredencialController {
     let destino = credencial.email;
     let asunto = "Registro en nuestra Tienda";
     let contenido = `Tu usuario: ${credencial.email} y tu contraseña: ${clave}`;
-    fetch(`http://127.0.0.1:5000/envio-correo?=correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
+    fetch(`http://127.0.0.1:5000/envio-correo?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
     .then((data:any)=>{
       console.log(data);
     });
+
     return c;
   }
 
