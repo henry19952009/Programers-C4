@@ -20,7 +20,7 @@ export class Pedido extends Entity {
     type: 'date',
     required: true,
   })
-  fecha_venta?: string;
+  fecha_venta: string;
 
   @property({
     type: 'string',
@@ -30,8 +30,9 @@ export class Pedido extends Entity {
 
   @property({
     type: 'date',
+    required: true,
   })
-  fecha_vencimiento?: string;
+  fecha_vencimiento: string;
 
   @property({
     type: 'number',
@@ -56,12 +57,6 @@ export class Pedido extends Entity {
     required: true,
   })
   valor_total: number;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  estado: string;
 
   @property({
     type: 'string',

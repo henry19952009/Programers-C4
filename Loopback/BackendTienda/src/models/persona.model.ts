@@ -1,5 +1,5 @@
 import {Entity, model, property, belongsTo, hasMany} from '@loopback/repository';
-import {Autenticacion} from './autenticacion.model';
+import {Credencial} from './credencial.model';
 import {Pedido} from './pedido.model';
 
 @model()
@@ -41,8 +41,8 @@ export class Persona extends Entity {
   })
   telefono: string;
 
-  @belongsTo(() => Autenticacion)
-  autenticacionId: string;
+  @belongsTo(() => Credencial)
+  credencialId: string;
 
   @hasMany(() => Pedido)
   pedidos: Pedido[];
