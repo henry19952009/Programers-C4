@@ -1,8 +1,8 @@
 import {inject, Getter} from '@loopback/core';
 import {DefaultCrudRepository, repository, BelongsToAccessor, HasManyRepositoryFactory} from '@loopback/repository';
 import {MongodbDataSource} from '../datasources';
-import {Persona, PersonaRelations, Autenticacion, Pedido} from '../models';
-import {AutenticacionRepository} from './autenticacion.repository';
+import {Persona, PersonaRelations, Credencial, Pedido} from '../models';
+import {CredencialRepository} from './credencial.repository';
 import {PedidoRepository} from './pedido.repository';
 
 export class PersonaRepository extends DefaultCrudRepository<
@@ -11,17 +11,17 @@ export class PersonaRepository extends DefaultCrudRepository<
   PersonaRelations
 > {
 
-  public readonly autenticacion: BelongsToAccessor<Autenticacion, typeof Persona.prototype.id>;
+  public readonly credencial: BelongsToAccessor<Credencial, typeof Persona.prototype.id>;
 
   public readonly pedidos: HasManyRepositoryFactory<Pedido, typeof Persona.prototype.id>;
 
   constructor(
-    @inject('datasources.mongodb') dataSource: MongodbDataSource, @repository.getter('AutenticacionRepository') protected autenticacionRepositoryGetter: Getter<AutenticacionRepository>, @repository.getter('PedidoRepository') protected pedidoRepositoryGetter: Getter<PedidoRepository>,
+    @inject('datasources.mongodb') dataSource: MongodbDataSource, @repository.getter('CredencialRepository') protected credencialRepositoryGetter: Getter<CredencialRepository>, @repository.getter('PedidoRepository') protected pedidoRepositoryGetter: Getter<PedidoRepository>,
   ) {
     super(Persona, dataSource);
     this.pedidos = this.createHasManyRepositoryFactoryFor('pedidos', pedidoRepositoryGetter,);
     this.registerInclusionResolver('pedidos', this.pedidos.inclusionResolver);
-    this.autenticacion = this.createBelongsToAccessorFor('autenticacion', autenticacionRepositoryGetter,);
-    this.registerInclusionResolver('autenticacion', this.autenticacion.inclusionResolver);
+    this.credencial = this.createBelongsToAccessorFor('credencial', credencialRepositoryGetter,);
+    this.registerInclusionResolver('credencial', this.credencial.inclusionResolver);
   }
 }
