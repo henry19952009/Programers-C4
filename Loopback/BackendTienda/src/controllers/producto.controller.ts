@@ -19,13 +19,15 @@ import {
 } from '@loopback/rest';
 import {Producto} from '../models';
 import {ProductoRepository} from '../repositories';
+import{ authenticate } from '@loopback/authentication';
 
+@authenticate('admin')
 export class ProductoController {
   constructor(
     @repository(ProductoRepository)
     public productoRepository : ProductoRepository,
   ) {}
-
+  
   @post('/productos')
   @response(200, {
     description: 'Producto model instance',
@@ -58,6 +60,7 @@ export class ProductoController {
     return this.productoRepository.count(where);
   }
 
+  @authenticate.skip()
   @get('/productos')
   @response(200, {
     description: 'Array of Producto model instances',

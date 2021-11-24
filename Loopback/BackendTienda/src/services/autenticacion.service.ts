@@ -50,7 +50,7 @@ export class AutenticacionService {
     return token;
   }
 
-  ValidarToken(token:string){
+  ValidarTokenJWT(token:string){
     try{
       let datos = JWT.verify(token, Llaves.claveJWT);
       return datos;
