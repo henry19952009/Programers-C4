@@ -17,8 +17,10 @@ import {
   del,
   requestBody,
   response,
+  HttpErrors,
 } from '@loopback/rest';
-import {Credencial} from '../models';
+import { Llaves } from '../config/llaves';
+import { Credencial, IdentificarUsuario } from '../models';
 import {CredencialRepository} from '../repositories';
 import { AutenticacionService } from '../services';
 const fetch = require ("node-fetch");
@@ -30,6 +32,31 @@ export class CredencialController {
     @service(AutenticacionService)
     public servicioAutenticacion : AutenticacionService,
   ) {}
+
+  @post("/identificarCredencial",{
+    responses:{
+      '200':{
+        description:"identificacion de credencial"
+      }
+    }
+  })
+  async identificarCredencial(
+    @requestBody() identificarUsuario:IdentificarUsuario
+  ){
+    let c = await this.servicioAutenticacion.IdentificarCredencial(identificarUsuario.usuario, identificarUsuario.clave);
+    if(c){
+      let token = this.servicioAutenticacion.GenerarTokenJWT(c);
+      return {
+        datos:{
+          correo: c.email,
+          id: c.id
+        },
+        tk: token
+      }
+    }else{
+      throw new HttpErrors[401]("Los datos ingresados no son validos");
+    }
+  }
 
   @post('/credenciales')
   @response(200, {
@@ -58,11 +85,14 @@ export class CredencialController {
     //Notificacion usuario
     let destino = credencial.email;
     let asunto = "Registro en nuestra Tienda";
-    let contenido = `Tu usuario: ${credencial.email} y tu contraseña: ${clave}`;
-    fetch(`http://127.0.0.1:5000/envio-correo?=correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
+    let contenido = `¡Hola, bienvenido a nuestra Tienda! Para poder acceder, estos son tus datos:
+    Usuario: ${credencial.email}
+    Contraseña: ${clave}`;
+    fetch(`${Llaves.urlServicioNotificaciones}/envio-correo?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
     .then((data:any)=>{
       console.log(data);
     });
+
     return c;
   }
 
