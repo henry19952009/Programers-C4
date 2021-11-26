@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(204, 204, 204);
+}
+
+input{
+    border: chartreuse 2px double;
+    text-align: center;
+    color: darkmagenta;
+}
+
+#miDiv{
+    border: 2.5px solid chartreuse;
+    height: 65px;
+    width: 80%;
+}
+
+#img_pcmsi{
+    border: 2px solid red;
+    width: 30%;
+    height: auto;
+}
+
+.fondowhite{
+    background-color: rgb(255, 227, 227);
+}
+
+.bordeWhite{
+    border: 2px double white !important;
+    border-radius: 25;
+}
+
+input[type=button]:hover{
+    background-color: yellow;
+    cursor: pointer;
+}
