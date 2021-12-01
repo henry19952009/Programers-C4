@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+
+.nav a {
+    border-bottom: 3px solid red;
+}
+.nav a:hover {
+    color: red !important;
+    border-bottom: 3px solid white;
+    /* border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%; */
+}
+
+img {
+    width: 100%;
+}
+.mycard {
+   height: 22rem; 
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.mycard:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+    box-shadow:  7px 7px 7px #929292,
+    -7px -7px 14px #ffffff;
+}
+
+.card-img{
+    width: 100%;
+    max-height: 12rem;
+    height: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img img {
+    width: 60%;
+    height: 100%;
+}
+
+
+.mycontainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.price {
+    color: #96DF42;
+}
+
+.bg-gray {
+    background-color: #e1e1e1 ;
+}
+.bg-mydark {
+    background-color: rgba( 0, 0, 0, 0.25 );
+}
+
+.bar-search {
+    width: 30rem;
+}
+
+.icon-search {
+    cursor: pointer;
+}
+
+.logo {
+    width: 8rem;
+    height: 3rem;
+}
+
+.discount {
+    background-color: red;
+    color: white;
+    border-radius: 10%;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    font-size: 1rem;
+}
+
+/* Styles of User login */
+.login-card {
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
+    width: 20rem;
+    height: 27rem;
+}
+
+
+/* Styles of Page Products */

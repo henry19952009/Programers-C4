@@ -1,0 +1,52 @@
+<div
+  class="d-flex justify-content-center align-items-center"
+  style="height: 80vh"
+>
+  <div class="card login-card p-3 text-white rounded-3">
+    <div class="d-flex flex-column align-items-center mb-2">
+      <h1 class="text-center mb-4">Login</h1>
+      <i class="fas fa-user" style="font-size: 4rem"></i>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="fgValidador" (ngSubmit)="IdentificarUsuario()">
+        <div class="form-group mb-4">
+          <label class="mb-2" for="">Usuario</label>
+          <div class="input-group">
+            <span class="input-group-text"
+              ><i class="fas fa-envelope"></i
+            ></span>
+            <input
+              formControlName="usuario"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+            />
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label class="mb-2" for="">Contraseña</label>
+          <div class="input-group">
+            <span class="input-group-text"
+              ><i class="fas fa-unlock-alt"></i
+            ></span>
+            <input
+              formControlName="clave"
+              type="password"
+              class="form-control"
+              placeholder="Contraseña"
+            />
+          </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <button
+            [disabled]="!fgValidador.valid"
+            class="btn btn-primary text-white fs-5"
+          >
+            Ingresar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container" style="height: 100vh">
+  <h2 class="text-center mb-3 mt-3">Productos</h2>
+  <a routerLink="/administracion/crear-productos" class="btn btn-dark mb-3"
+    >Nuevo Producto <i class="fas fa-plus-circle"></i
+  ></a>
+
+  <table class="table table-responsive table-dark table-hover">
+    <thead>
+      <tr>
+        <th class="text-center">Nombre</th>
+        <th class="text-center">Precio</th>
+        <th class="text-center">Stock</th>
+        <th class="text-center">Imagen</th>
+        <th class="text-center">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of listadoRegistros">
+        <td class="text-center">
+          {{ p.name }}
+        </td>
+        <td class="text-center">
+          {{ p.unitValue }}
+        </td>
+        <td class="text-center">
+          {{ p.stock }}
+        </td>
+        <td class="text-center">
+          <img src="{{ p.image }}" alt="" class="imagen-producto" />
+        </td>
+        <td class="text-center">
+          <a
+            routerLink="/administracion/editar-producto/{{ p.id }}"
+            class="btn btn-warning"
+            >Editar Producto <i class="fas fa-pen"></i
+          ></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

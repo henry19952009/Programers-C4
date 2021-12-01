@@ -1,0 +1,145 @@
+<div>
+  <img src="../../../assets/Images/banner.webp" alt="" />
+</div>
+<section class="mycontainer mt-4">
+  <h3 class="text-secondary mb-3">Ofertas</h3>
+  <div class="row">
+    <div
+      *ngFor="let p of listadoRegistros"
+      class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+      id="card-portatil"
+    >
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="{{ p.image }}" alt="imagenDeBaseDeDatos" />
+        </div>
+        <div class="card-body">
+          <p>{{ p.description }}</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            {{ p.total | number: "2.0-0" }}
+            <span class="discount">-{{ p.discount }}%</span>
+          </p>
+          <a routerLink="/producto-detalles/{{ p.id }}" class="btn btn-warning"
+            >Ver Producto</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" id="card-portatil">
+        <div class="card mycard">
+          <div class="card-img pt-2 pb-2">
+            <img src="../../../assets/Images/computador.webp" alt="" />
+          </div>
+          <div class="card-body">
+            <p>Descripción</p>
+            <p class="fs-4">
+              <i class="fas fa-dollar-sign"></i>
+              7.500.000
+              <span class="discount">-25%</span>
+            </p>
+          </div>
+        </div>
+      </div> -->
+    <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="../../../assets/Images/mouse_gamer.webp" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Descripción</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            450.000
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="../../../assets/Images/silla_gamer.webp" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Descripción</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            990.000
+            <span class="discount">-18%</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="../../../assets/Images/taclado_gamer.webp" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Descripción</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            130.000
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="../../../assets/Images/cpu_gamer.webp" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Descripción</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            730.000
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="../../../assets/Images/monitor_sansumg.webp" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Descripción</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            920.000
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="../../../assets/Images/celular_xiaomi.webp" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Descripción</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            1.500.000
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card mycard">
+        <div class="card-img pt-2 pb-2">
+          <img src="../../../assets/Images/camara_canon.webp" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Descripción</p>
+          <p class="fs-4">
+            <i class="fas fa-dollar-sign"></i>
+            2.500.000
+          </p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>

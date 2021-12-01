@@ -1,0 +1,102 @@
+<header class="bg-dark text-white">
+  <div class="navbar container align-items-center">
+    <div class="d-flex justify-content-center col-12 col-sm-3 col-md-3">
+      <a routerLink="/inicio" class="nav-link">
+        <img
+          class="logo"
+          src="../../../assets/Images/Logo_e-shop.png"
+          alt="Logo"
+        />
+      </a>
+    </div>
+    <div class="d-flex align-items-center col-12 col-md-4">
+      <input
+        type="text"
+        placeholder="Buscar Productos"
+        class="form-control bar-search"
+      />
+      <div class="card p-2">
+        <i class="fas fa-search fs-5 text-secondary icon-search"></i>
+      </div>
+    </div>
+    <div class="navbar-expand-sm col-md-12 col-lg-5">
+      <nav
+        class="
+          nav
+          navbar-collapse
+          collapse
+          d-sm-inline-flex
+          flex-sm-row-reverse
+        "
+      >
+        <ul class="navbar-nav">
+          <li *ngIf="seInicioSesion" class="nav-item">
+            <a routerLink="/administracion/personas" class="nav-link text-white"
+              >Personas <i class="fas fa-user-friends"></i
+            ></a>
+          </li>
+          <li *ngIf="seInicioSesion" class="nav-item">
+            <a
+              routerLink="/administracion/listar-productos"
+              class="nav-link text-white"
+              >Productos <i class="fas fa-clipboard-list"></i
+            ></a>
+          </li>
+          <li *ngIf="seInicioSesion" class="nav-item">
+            <a routerLink="/seguridad/cambioclave" class="nav-link text-white"
+              >Cambiar Clave <i class="fas fa-key"></i>
+            </a>
+          </li>
+          <li *ngIf="seInicioSesion" class="nav-item">
+            <a routerLink="/seguridad/cerrarSesion" class="nav-link text-white">
+              Cerrar Sesión <i class="fas fa-times-circle"></i>
+            </a>
+          </li>
+          <li *ngIf="!seInicioSesion" class="nav-item">
+            <a routerLink="/seguridad/identificar" class="nav-link text-white"
+              >Iniciar Sesión <i class="fas fa-sign-in-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="bg-mydark">
+    <nav class="nav">
+      <a
+        href="#"
+        class="
+          nav-link
+          text-white
+          col-12 col-sm-6 col-md-3 col-lg-2
+          text-center
+        "
+        >Ofertas Del Día</a
+      >
+      <a
+        href="#"
+        class="
+          nav-link
+          text-white
+          col-12 col-sm-6 col-md-3 col-lg-2
+          text-center
+        "
+        >Servicio Al Cliente</a
+      >
+      <a
+        href="#"
+        class="
+          nav-link
+          text-white
+          col-12 col-sm-6 col-md-3 col-lg-2
+          text-center
+        "
+        >Tarjetas De Regalo</a
+      >
+    </nav>
+  </div>
+
+  <div>
+    <img src="./Images/banner.webp" alt="" />
+  </div>
+</header>
