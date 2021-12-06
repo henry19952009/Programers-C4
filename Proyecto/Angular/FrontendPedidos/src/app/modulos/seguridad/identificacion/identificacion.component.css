@@ -1,0 +1,28 @@
+#panell{
+    margin-top: 50px;
+    padding: 0px;
+    margin-bottom: 50px;
+  }
+  #loginbtn{
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  #title{
+    background-color: #212121;
+    color: white;
+    padding: 8px;
+    margin-top: 0px
+  }
+  form{
+    padding:0px;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  #username,#password{
+   margin-left: 20px;
+   margin-right: 20px;
+  }
+  #checkbox{
+    margin-left: 30px;
+   }
