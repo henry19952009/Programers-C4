@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+
+.nav a {
+    border-bottom: 3px solid red;
+}
+.nav a:hover {
+    color: red !important;
+    border-bottom: 3px solid white;
+    /* border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%; */
+}
+
+img {
+    width: 100%;
+}
+.mycard {
+   height: 22rem; 
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.mycard:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+    box-shadow:  7px 7px 7px #929292,
+    -7px -7px 14px #ffffff;
+}
+
+.card-img{
+    width: 100%;
+    max-height: 12rem;
+    height: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img img {
+    width: 60%;
+    height: 100%;
+}
+
+
+.mycontainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.price {
+    color: #96DF42;
+}
+
+.bg-gray {
+    background-color: #e1e1e1 ;
+}
+.bg-mydark {
+    background-color: rgba( 0, 0, 0, 0.25 );
+}
+
+.bar-search {
+    width: 30rem;
+}
+
+.icon-search {
+    cursor: pointer;
+}
+
+.logo {
+    width: 8rem;
+    height: 3rem;
+}
+
+.discount {
+    background-color: red;
+    color: white;
+    border-radius: 10%;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    font-size: 1rem;
+}
+
+/* Styles of User login */
+.login-card {
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
+    width: 22rem;
+    height: 35rem;
+}
+
+.login-card a {
+    text-decoration: none;
+    color: white;
+}
+.login-card a:hover {
+    color: yellow !important;
+}
+
+.register-card {
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
+    width: 40rem;
+    height: 100%;
+}
+
+.register-card a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.register-card a:hover {
+    color:yellow !important; 
+}
+
+.card-recuperarClave {
+    height: 24rem;
+    width: 20rem;
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
+}
+
+.card-recuperarClave a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.card-recuperarClave a:hover {
+    color:yellow !important; 
+}
+
+.card-perfil {
+    min-height: 30rem;
+    max-height: 80rem;
+    width: 100%;
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
+}
+
+
+/* Styles of Page Products */

@@ -1,0 +1,100 @@
+<section class="mt-5 mb-5 mycontainer" style="height: 100%">
+  <div class="card p-3" style="height: auto">
+    <div class="d-flex row">
+      <div class="col-sm-12 col-md-7 col-lg-7 p-2">
+        <div class="card p-5">
+          <img src="{{ p_image }}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-5 p-2">
+        <div class="card p-3 mb-5">
+          <h3>{{ p_description }}</h3>
+          <h3>$ {{ p_total | number: "2.0-0" }}</h3>
+          <p>Vendido Por: <span class="text-secondary">Admin</span></p>
+          <p class="text-secondary">
+            <i class="far fa-credit-card fs-5 text-info"></i> Credito 36 Cuotas
+          </p>
+          <p *ngIf="p_freeShipping" class="text-secondary">
+            <i class="fas fa-car fs-5 text-info"></i> Envío Gratis
+          </p>
+          <p *ngIf="!p_freeShipping" class="text-secondary">
+            <i class="fas fa-car fs-5 text-info"></i> Envío Por $10.000
+          </p>
+          <p>
+            Stock Disponible: <span class="text-secondary">{{ p_stock }}</span>
+          </p>
+          <form [formGroup]="fgValidador" (ngSubmit)="AgregarCarrito()">
+            <div class="input-group">
+              <span class="input-group-text">Cantidad "Unidad"</span>
+              <select
+                formControlName="cantidad"
+                name=""
+                class="form-control text-center"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <!-- <input type="number" class="form-control" max="{{ p_stock }}" /> -->
+            </div>
+
+            <div class="d-flex flex-column align-items-center mt-4">
+              <button
+                class="
+                  btn btn-primary btn-lg
+                  mb-3
+                  pt-2
+                  pb-2
+                  col-sm-8 col-md-10 col-lg-8
+                "
+              >
+                Comprar Ahora
+              </button>
+              <button
+                class="
+                  btn btn-warning btn-lg
+                  mb-3
+                  pt-2
+                  pb-2
+                  col-sm-8 col-md-10 col-lg-8
+                "
+              >
+                Agregar Al Carrito
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-7 col-lg-7">
+      <div class="card p-3">
+        <h3>Caracteristicas</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nulla
+          id hic beatae rerum consequatur. Placeat corporis excepturi totam et,
+          magni beatae nostrum recusandae iste illo! Quidem nisi saepe dicta
+          voluptatem sunt dolorem eveniet modi. Quod accusantium veritatis
+          provident consectetur quae ipsa inventore. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptate reiciendis ratione impedit
+          nisi nobis non facere, quam dignissimos eos magni, omnis sunt quasi,
+          voluptates iste assumenda. Reiciendis perspiciatis error sed! Itaque
+          optio beatae minus, sint quaerat magnam? Voluptatem doloribus
+          distinctio esse. Assumenda, nesciunt sapiente excepturi doloribus
+          repudiandae iure error esse veniam neque dolorum dignissimos, quo
+          blanditiis? Repellendus natus iusto doloribus. Tempora harum expedita
+          atque quidem similique repudiandae debitis ullam illo nemo eos natus
+          minus impedit tenetur, distinctio necessitatibus vitae non facilis
+          eligendi explicabo? Explicabo sequi quasi obcaecati omnis, natus
+          nesciunt! Tempore quas quos sequi fuga a consequatur nesciunt optio
+          porro magnam laborum. Perferendis maxime, eius qui perspiciatis
+          veritatis illum molestiae. Praesentium quisquam distinctio id amet
+          excepturi ut, vero voluptatum quas dicta distinctio perspiciatis.
+          Molestiae mollitia minus sunt. Ex doloremque reprehenderit nesciunt
+          debitis. Obcaecati accusamus possimus quod modi necessitatibus
+          deserunt, omnis veritatis facilis perferendis harum beatae recusandae
+          sequi voluptatibus laudantium. Veritatis facere sit nihil.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
